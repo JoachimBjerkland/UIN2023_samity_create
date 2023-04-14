@@ -11,7 +11,8 @@ export default function AddShow() {
         writeClient.create({
             _type: "show",
             title: title
-        }).then()
+        }).then((document) => {setTitle (""); console.log("TV-serien er lagret med id",
+        document._id)}).catch((error) => {console.log("Noe galt skjedde: ", error.message)})
     }
 
     return ( 
